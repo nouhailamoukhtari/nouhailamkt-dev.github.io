@@ -2,10 +2,148 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Nouhaila Portfolio</title>
+  <title>Nouhaila | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, je suis Nouhaila</h1>
-  <p>Mon portfolio arrive bientôt.</p>
+
+<nav class="side-menu">
+  <a href="#home">Home</a>
+  <a href="#p1">01</a>
+  <a href="#p2">02</a>
+  <a href="#p3">03</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+  <h1 class="name reveal" id="type-name">NOUHAILA</h1>
+  <p class="role reveal" id="type-role">Développeuse Web Junior</p>
+
+  <div class="hero-btns reveal">
+    <a href="#projects" class="btn">Voir projets</a>
+    <a href="#contact" class="btn ghost">Contact</a>
+  </div>
+</section>
+
+
+<section id="p1" class="section project bg1 reveal">
+  <span class="number">01</span>
+  <h2>E-commerce Website</h2>
+  <p>Site e-commerce avec gestion produits et commandes.</p>
+
+  <div class="project-links">
+    <a href="#" target="_blank">Live</a>
+    <a href="#" target="_blank">GitHub</a>
+  </div>
+</section>
+
+<section id="p2" class="section project bg2 reveal">
+  <span class="number">02</span>
+  <h2>Gestion de Stock</h2>
+  <p>Application web pour localiser les articles industriels.</p>
+
+  <div class="project-links">
+    <a href="#" target="_blank">Détails</a>
+    <a href="#" target="_blank">GitHub</a>
+  </div>
+</section>
+
+<section id="p3" class="section project bg3 reveal">
+  <span class="number">03</span>
+  <h2>Plateforme Bancaire</h2>
+  <p>Gestion comptes, transactions et signature électronique.</p>
+
+  <div class="project-links">
+    <a href="#" target="_blank">Prototype</a>
+    <a href="#" target="_blank">GitHub</a>
+  </div>
+</section>
+
+<section id="contact" class="section about reveal">
+  <p>Disponible pour projets & collaborations</p>
+
+  <div class="contact-links">
+    <a href="mailto:contact@email.com">Email</a>
+    <a href="https://github.com/" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2025 Nouhaila</p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("active");
+    }
+  });
+},{threshold:0.2});
+reveals.forEach(r=>observer.observe(r));
+</script>
+<script>
+function typeText(elementId, text, speed = 80, delay = 0) {
+  const el = document.getElementById(elementId);
+  el.textContent = "";
+  el.classList.add("typing");
+
+  setTimeout(() => {
+    el.style.opacity = 1;
+    let i = 0;
+    const interval = setInterval(() => {
+      el.textContent += text.charAt(i);
+      i++;
+      if (i === text.length) {
+        clearInterval(interval);
+        el.classList.remove("typing");
+      }
+    }, speed);
+  }, delay);
+}
+
+typeText("type-name", "NOUHAILA", 100);
+typeText("type-role", "Développeuse Web Junior", 50, 1200);
+</script>
+<script>
+// TYPE EFFECT
+function typeText(elementId, text, speed = 90, delay = 0) {
+  const el = document.getElementById(elementId);
+  el.textContent = "";
+  el.classList.add("typing");
+
+  setTimeout(() => {
+    let i = 0;
+    el.style.opacity = 1;
+    const interval = setInterval(() => {
+      el.textContent += text.charAt(i);
+      i++;
+      if (i === text.length) {
+        clearInterval(interval);
+        el.classList.remove("typing");
+      }
+    }, speed);
+  }, delay);
+}
+
+typeText("type-name", "NOUHAILA", 120);
+typeText("type-role", "Développeuse Web Junior", 50, 1400);
+
+// REVEAL ON SCROLL
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, { threshold: 0.15 });
+
+reveals.forEach(r => observer.observe(r));
+</script>
 </body>
 </html>

@@ -1,0 +1,289 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  background:#06141B;
+  color:#CCD0CF;
+  overflow-x:hidden;
+}
+
+html{ scroll-behavior:smooth; }
+
+/* SIDE MENU */
+.side-menu{
+  position:fixed;
+  left:30px;
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  z-index:10;
+}
+
+.side-menu a{
+  text-decoration:none;
+  color:#9BA8AB;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.side-menu a:hover{
+  color:#CCD0CF;
+}
+
+/* SECTIONS */
+.section{
+  min-height:100vh;
+  padding:80px 120px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 120px; /* باش ما يلصقش مع المينو */
+}
+
+/* NAME */
+.name {
+  font-size: clamp(4rem, 10vw, 7rem);
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+}
+
+/* ROLE */
+.role {
+  font-size: 1.1rem;
+  color: #9BA8AB;
+  margin-bottom: 50px; /* المسافة بين العنوان و الزرار */
+}
+
+/* BUTTONS */
+.hero-btns {
+  display: flex;
+  gap: 25px;
+}
+
+.btn {
+  min-width: 160px;
+  text-align: center;
+  padding: 14px 0;
+}
+
+
+/* PROJECTS */
+.project h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.project p{
+  max-width:550px;
+  line-height:1.7;
+  color:#9BA8AB;
+}
+
+.number{
+  font-size:120px;
+  color:rgba(255,255,255,0.05);
+  margin-bottom:20px;
+}
+
+/* COLORS */
+.bg1{ background:#11212D; }
+.bg2{ background:#253745; }
+.bg3{ background:#4A5C6A; }
+
+/* ABOUT */
+.about{
+  background:#9BA8AB;
+  color:#06141B;
+  font-size:22px;
+}
+
+/* FOOTER */
+.footer{
+  background:#06141B;
+  padding:40px;
+  text-align:center;
+  color:#9BA8AB;
+}
+
+/* ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .section{
+    padding:60px 40px;
+  }
+
+  .name{
+    font-size:48px;
+  }
+
+  .side-menu{
+    display:none;
+  }
+}.
+/* BUTTONS */
+.hero-btns{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+}
+
+.btn{
+  padding:12px 26px;
+  border:1px solid #CCD0CF;
+  text-decoration:none;
+  color:#CCD0CF;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#CCD0CF;
+  color:#06141B;
+}
+
+.btn.outline{
+  border-color:#9BA8AB;
+  color:#9BA8AB;
+}
+
+/* PROJECT LINKS */
+.project-links{
+  margin-top:30px;
+  display:flex;
+  gap:25px;
+}
+
+.project-links a{
+  color:#CCD0CF;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:0.3s;
+}
+
+.project-links a:hover{
+  border-color:#CCD0CF;
+}
+
+/* CONTACT */
+.contact-links{
+  margin-top:30px;
+  display:flex;
+  gap:30px;
+}
+
+.contact-links a{
+  color:#06141B;
+  text-decoration:none;
+  font-weight:500;
+}
+.name, .role {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* caret */
+.typing::after {
+  content: "|";
+  margin-left: 5px;
+  animation: blink 1s infinite;
+  color: #CCD0CF;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+/* ===== HERO TEXT ===== */
+.name {
+  font-size: clamp(4rem, 10vw, 7rem);
+  letter-spacing: 0.18em;
+  color: #CCD0CF;
+  transition: all 0.4s ease;
+}
+
+.name:hover {
+  color: #9BA8AB;
+  letter-spacing: 0.22em;
+}
+
+.role {
+  font-size: 1.1rem;
+  color: #9BA8AB;
+  margin-top: 25px;
+  margin-bottom: 60px;
+}
+
+/* ===== BUTTONS ===== */
+.hero-btns {
+  display: flex;
+  gap: 25px;
+}
+
+.btn {
+  padding: 14px 30px;
+  border: 1px solid #CCD0CF;
+  color: #CCD0CF;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #CCD0CF;
+  color: #06141B;
+}
+
+.btn.ghost {
+  background: transparent;
+}
+
+/* ===== TYPE EFFECT ===== */
+.typing::after {
+  content: "|";
+  margin-left: 6px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,50%,100% { opacity: 1; }
+  25%,75% { opacity: 0; }
+}
+
+/* ===== REVEAL ON SCROLL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(8px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
